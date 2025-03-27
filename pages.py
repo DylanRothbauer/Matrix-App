@@ -12,10 +12,11 @@ def introduction_page(window):
 
     tk.Label(window, text="Welcome to the Matrix Calculator!", font=("Helvetica", 16)).grid(row=0, column=0, pady=20)
     tk.Label(window, text="This application allows you to input a matrix and calculate its properties.").grid(row=1, column=0, pady=10)
-    tk.Label(window, text="Click 'Start' to begin.").grid(row=2, column=0, pady=10)
+    tk.Label(window, text="Made by Dylan Rothbauer & Colin Kintzinger").grid(row=2, column=0, pady=10)
+    tk.Label(window, text="Click 'Start' to begin.").grid(row=3, column=0, pady=10)
 
     # Button to go to Page 1 (matrix dimension input)
-    tk.Button(window, text="Start", command=lambda: page1(window)).grid(row=3, column=0, pady=20)
+    tk.Button(window, text="Start", command=lambda: page1(window)).grid(row=4, column=0, pady=20)
 
 # Function for Page 1 (Input matrix size: rows and columns)
 def page1(window):
