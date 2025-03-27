@@ -1,12 +1,13 @@
 import tkinter as tk
-    
-window = tk.Tk()
-window.title("My First GUI")
-    
-label = tk.Label(window, text="Hello, GUI!")
-label.pack()
-    
-button = tk.Button(window, text="Click Me")
-button.pack()
-    
-window.mainloop()
+from pages import introduction_page  # Import the introduction page
+
+# Main application setup
+root = tk.Tk()
+root.title("Matrix Input App")
+root.geometry("400x300")
+
+# Start with the Introduction Page
+introduction_page(root)
+
+# Run the Tkinter event loop
+root.mainloop()
