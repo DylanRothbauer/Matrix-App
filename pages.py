@@ -1,10 +1,5 @@
 import tkinter as tk
-from functions import validate_matrix_input, display_matrix
-
-# Function to clear all widgets from the window
-def clear_page(window):
-    for widget in window.winfo_children():
-        widget.destroy()
+from functions import validate_matrix_input, display_matrix, clear_page
 
 # Introduction Page
 def introduction_page(window):
@@ -60,9 +55,9 @@ def page2(window, rows, cols):
         if matrix_data is None:
             error_label.config(text=error_msg)
         else:
-            print("Matrix Data:", matrix_data)  # Here you can process or store the matrix data
+            print("Matrix Data:", matrix_data)
             # Go to operations page. Also, we should pass the matrix to this page so we can call operations/functions on it
-            page3(window, matrix_data)
+            Operations(window, matrix_data)
             
 
     # Create the matrix input fields dynamically based on rows and columns
@@ -84,7 +79,7 @@ def page2(window, rows, cols):
     back_button = tk.Button(window, text="Back to Home", command=lambda: page1(window))
     back_button.grid(row=rows+3, columnspan=cols, pady=10)
 
-def page3(window, matrix):
+def Operations(window, matrix):
     clear_page(window)
     tk.Label(window, text="Matrix submitted successfully!").grid(row=1, columnspan=1, pady=20)
     display_matrix(window, matrix)
