@@ -1,38 +1,20 @@
 import math as math 
+import rowReducedSteps as rrefSteps
+matrix = [[1, 2, 3], [1, 5, 6], [1, 8, 9]]
 
-matrix = [[0, 2, 3], [0, 5, 6], [0, 8, 9]]
-def isOneInOtherRow(matrix):
-    for i in range(0, len(matrix)-1):
-        if matrix[0][0]-matrix[0][i]==1:
-            return True
-        else:
-            return False
-def  isFirstPivotIsOne(matrix):
-    if matrix[0][0]==1:
-        return True   
-    else:
-        return False 
-def findFirstNonZero(matrix):
-    for j in range(0, len(matrix)-1):
-        for i in range(0, len(matrix)-1):
-            if matrix[0][i]!=0:
-                return j, i
 def rref(matrix):
-    currentPivot = []
+    # Check if the first pivot is non-zero
+    if rrefSteps.isFirstPivotnoneZero(matrix):
+        # Perform row reduction steps
 
-    if isFirstPivotIsOne(matrix):
-        print("1.pass")
-    elif isOneInOtherRow(matrix):
-        print("2.pass")
-    else:
-        #findRowReductionSubtract(matrix)
-        print(findFirstNonZero(matrix))
-        currentPivot = findFirstNonZero(matrix)
-        print(currentPivot)
-        print("fail")
+        print(matrix)
+    
+    
 # Def findRowReductionSubtract(matrix):
 #     for i in range(0, len(matrix)-1):
 #         if matrix[0][0]-matrix[0][i]==1:
 
+#chec a11 not equal zero then divide row by a11 to get 1 for pivot
+# for i>1 if is not equal to 0 then 
             
 rref(matrix)
